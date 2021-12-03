@@ -5,16 +5,12 @@ import {Wrapper, Content} from './Header.style'
 const Header = () => {
   return (
 
-  //  <Wrapper>
-  //    <Content>
-  //      <h4>zolar</h4>
-  //    </Content>
-  //  </Wrapper>
-    <div className = "wrapper">
-      <div className = "content">
+    <Wrapper>
+      <Content>
         <h4>zolar</h4>
-      </div>
-    </div>
+      </Content>
+    </Wrapper>
+    
   )
 }
 

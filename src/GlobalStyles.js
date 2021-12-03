@@ -17,10 +17,12 @@ export const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
+     margin: 0;
+    padding: 0;
   }
   body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
   }
 `
