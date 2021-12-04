@@ -1,8 +1,15 @@
 import {useState, useEffect} from 'react'
 import API from '../API.js'
 
+const initialState = {movies: {
+  page: 0,
+  results: [],
+  total_pages: 0,
+  total_results: 0}
+};
+
 export const useHomeFetch = () => {
-const[state, setState] = useState()
+const[state, setState] = useState(initialState)
 const[error, setError] = useState(false)
 const[loading, setLoading] = useState(true)
 
