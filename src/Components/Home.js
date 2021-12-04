@@ -1,43 +1,24 @@
-import {useState, useEffect} from 'react'
-import API from '../API.js'
+import React from 'react'
+import Hero from './HeroImage/Hero'
+import {IMAGE_BASE_URL, BACKDROP_SIZE} from '../config'
+import { useHomeFetch } from '../Hooks/useHomeFetch'
+
 
 const Home = () => {
-const[state, setState] = useState()
-const[error, setError] = useState()
-const[loading, setLoading] = useState(true)
-
-const fetchMovies = async(page, searchTerm = "" ) => {
-  try{
-    setLoading(true)
-   const movies = await API.fetchMovies(searchTerm, page )
-   
-   setState(prev => ({
-        ...prev,
-        movies: {
-          ...movies,
-          results:
-            page > 1
-              ? [...prev.movies.results, ...movies.results]
-              : [...movies.results]
-        },
-        loading: false
-      }));
-      
-  }catch(error){
-    setError(error)
-  }
-  console.log(state)
-}
-
-useEffect(() => {
-  setLoading(false)
-  fetchMovies(1)
-}, [])
+const {state, error, loading} = useHomeFetch()
+console.log(state)
 
   return (
-    <div>
+    <>
+      {
+        state.movies.results[0] ? 
+        <Hero 
+          image = {`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.movies.results[0].backdrop_path}`} 
+          title = {state.movies.results[0].original_title} text = {state.movies.results[0].overview}/> : null
+      }
       
-    </div>
+      
+    </>
   )
 }
 
