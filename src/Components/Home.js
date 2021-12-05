@@ -3,6 +3,7 @@ import Hero from './HeroImage/Hero'
  import Grid from './Grid/Grid'
 import Thumb from './Thumb/Thumb' 
 import Spinner from './Spinner/Spinner'
+import SearchBar from './SearchBar/searchBar'
 import {IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE} from '../config'
 import { useHomeFetch } from '../Hooks/useHomeFetch'
 
@@ -21,6 +22,7 @@ const {movies} = state
           image = {`${IMAGE_BASE_URL}${BACKDROP_SIZE}${movies.results[0].backdrop_path}`} 
           title = {movies.results[0].original_title} text = {movies.results[0].overview}/> : null
       }
+      <SearchBar/>
       <Grid title = {'Popular Movies'}>
         {
           movies.results.map((movie) => {
