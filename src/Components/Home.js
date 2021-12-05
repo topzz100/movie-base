@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from './HeroImage/Hero'
  import Grid from './Grid/Grid'
 import Thumb from './Thumb/Thumb' 
+import Spinner from './Spinner/Spinner'
 import {IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE} from '../config'
 import { useHomeFetch } from '../Hooks/useHomeFetch'
 
@@ -35,6 +36,7 @@ const {movies} = state
           })
         }
       </Grid>
+      <Spinner/>
       
       
     </>
