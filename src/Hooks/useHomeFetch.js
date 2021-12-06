@@ -39,11 +39,10 @@ setLoading(false)
 }
 
 useEffect(() => {
-
-
   setLoading(false)
+  setState(initialState)
   fetchMovies(1, searchItem)
-}, [searchItem, state])
+}, [searchItem])
  
 return {state, error, loading, searchItem, setSearchItem};
 }
