@@ -9,6 +9,7 @@ const initialState = {movies: {
 };
 
 export const useHomeFetch = () => {
+const[searchItem, setSearchItem] = useState('')  
 const[state, setState] = useState(initialState)
 const[error, setError] = useState(false)
 const[loading, setLoading] = useState(true)
@@ -38,9 +39,11 @@ setLoading(false)
 }
 
 useEffect(() => {
+
+
   setLoading(false)
-  fetchMovies(1)
-}, [])
+  fetchMovies(1, searchItem)
+}, [searchItem, state])
  
-return {state, error, loading};
+return {state, error, loading, searchItem, setSearchItem};
 }

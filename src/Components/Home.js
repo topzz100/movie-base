@@ -11,18 +11,19 @@ import NoImage from '../images/no_image.jpg';
 
 
 const Home = () => {
-const {state, error, loading} = useHomeFetch()
+const {state, error, loading, searchItem, setSearchItem} = useHomeFetch()
 console.log(state)
+// console.log(searchItem);
 const {movies} = state
   return (
     <>
-      {
+      { !searchItem &&
         movies.results[0] ? 
         <Hero 
           image = {`${IMAGE_BASE_URL}${BACKDROP_SIZE}${movies.results[0].backdrop_path}`} 
           title = {movies.results[0].original_title} text = {movies.results[0].overview}/> : null
       }
-      <SearchBar/>
+      <SearchBar setSearchItem = {setSearchItem}/>
       <Grid title = {'Popular Movies'}>
         {
           movies.results.map((movie) => {
