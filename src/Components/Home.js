@@ -4,6 +4,7 @@ import Hero from './HeroImage/Hero'
 import Thumb from './Thumb/Thumb' 
 import Spinner from './Spinner/Spinner'
 import SearchBar from './SearchBar/searchBar'
+import Button from './Button/Button'
 import {IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE} from '../config'
 import { useHomeFetch } from '../Hooks/useHomeFetch'
 
@@ -11,7 +12,7 @@ import NoImage from '../images/no_image.jpg';
 
 
 const Home = () => {
-const {state, error, loading, searchItem, setSearchItem} = useHomeFetch()
+const {state, error, loading, searchItem, setSearchItem, setIsLoadingMore} = useHomeFetch()
 console.log(state)
 // console.log(searchItem);
 const {movies} = state
@@ -39,7 +40,10 @@ const {movies} = state
           })
         }
       </Grid>
-      <Spinner/>
+      {loading && <Spinner/>}
+     {state.page < state.total_pages && !loading && (
+      <Button text='Load More' callback={() => setIsLoadingMore(true)} />
+      )} 
       
       
     </>

@@ -13,6 +13,7 @@ const[searchItem, setSearchItem] = useState('')
 const[state, setState] = useState(initialState)
 const[error, setError] = useState(false)
 const[loading, setLoading] = useState(true)
+const [isLoadingMore, setIsLoadingMore] = useState(false);
 
 const fetchMovies = async(page, searchTerm = "" ) => {
   try{
@@ -43,6 +44,14 @@ useEffect(() => {
   setState(initialState)
   fetchMovies(1, searchItem)
 }, [searchItem])
+
+ useEffect(() => {
+
+ if (!isLoadingMore) return;
+
+     fetchMovies(state.page + 1, searchItem);
+     setIsLoadingMore(false);
+   }, [isLoadingMore, searchItem, state.page])
  
-return {state, error, loading, searchItem, setSearchItem};
+return {state, error, loading, searchItem, setSearchItem, setIsLoadingMore};
 }
