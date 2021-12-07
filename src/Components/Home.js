@@ -33,6 +33,7 @@ const {movies} = state
             return(
               <Thumb
               Key = {movie.id}
+              clickable
               image = {
                 movie.poster_path
                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
