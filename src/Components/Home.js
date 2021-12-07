@@ -16,6 +16,8 @@ const {state, error, loading, searchItem, setSearchItem, setIsLoadingMore} = use
 console.log(state)
 // console.log(searchItem);
 const {movies} = state
+
+  if (error) return <div>Something went wrong ...</div>;
   return (
     <>
       { !searchItem &&
