@@ -49,7 +49,7 @@ useEffect(() => {
 
  if (!isLoadingMore) return;
 
-     fetchMovies(state.page + 1, searchItem);
+     fetchMovies(state.movies.page + 1, searchItem);
      setIsLoadingMore(false);
    }, [isLoadingMore, searchItem, state.page])
  

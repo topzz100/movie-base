@@ -41,7 +41,7 @@ const {movies} = state
         }
       </Grid>
       {loading && <Spinner/>}
-     {state.page < state.total_pages && !loading && (
+     {state.movies.page < state.movies.total_pages && !loading && (
       <Button text='Load More' callback={() => setIsLoadingMore(true)} />
       )} 
       

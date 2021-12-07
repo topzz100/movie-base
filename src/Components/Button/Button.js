@@ -1,10 +1,10 @@
 import React from 'react'
-import { Wrapper } from '../SearchBar/SearchBar.style'
+import { Wrapper } from '../Button/Button.style'
 
 const Button = ({text, callback}) => {
 
   return (
-    <Wrapper onClick = {callback}>
+    <Wrapper type = 'button' onClick = {callback}>
       {text}
     </Wrapper>
   )
