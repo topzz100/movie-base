@@ -7,6 +7,10 @@ import styled from 'styled-components'
   `;
   export const Content = styled.div`
     padding: 20px 50px;
+
+      a{
+        text-decoration: none;
+      }
      h4{
        color: white;
        text-transform: uppercase;

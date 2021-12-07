@@ -1,13 +1,16 @@
 import React from 'react'
 import {Wrapper, Content} from './Header.style'
-
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
 
     <Wrapper>
       <Content>
-        <h4>zolar</h4>
+    
+        <Link to= '/' >
+          <h4>zolar</h4>
+        </Link>
       </Content>
     </Wrapper>
     

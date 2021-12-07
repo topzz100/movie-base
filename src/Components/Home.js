@@ -35,6 +35,7 @@ const {movies} = state
                 movie.poster_path
                 ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
                 : NoImage}
+                movieId = {movie.id}
               />
             )
           })

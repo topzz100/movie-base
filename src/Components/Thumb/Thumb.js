@@ -1,9 +1,19 @@
 import React from 'react'
 import {Image} from './Thumb.style'
+import {Link} from 'react-router-dom'
 
-const Thumb = ({image} ) => {
+const Thumb = ({image, movieId} ) => {
   return (
-    <Image src = {image}/>
+    <>
+      
+        <Link to = {`/:${movieId}`}>
+          <Image src = {image} alt = 'movie-thumb'/>
+        </Link>  
+       
+      
+    
+    </>
+    
       
     
   )

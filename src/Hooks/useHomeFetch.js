@@ -51,7 +51,7 @@ useEffect(() => {
 
      fetchMovies(state.movies.page + 1, searchItem);
      setIsLoadingMore(false);
-   }, [isLoadingMore, searchItem, state.page])
+   }, [isLoadingMore, searchItem, state.movies.page])
  
 return {state, error, loading, searchItem, setSearchItem, setIsLoadingMore};
 }
