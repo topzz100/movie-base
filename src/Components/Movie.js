@@ -16,6 +16,8 @@ const Movie = () => {
 
   console.log(movie)
 
+  if(loading) return <Spinner/>
+
   return (
     <>
       <MovieHeader title = {movie.original_title}/>
