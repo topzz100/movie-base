@@ -9,7 +9,7 @@ const Header = () => {
       <Content>
     
         <Link to= '/' >
-          <h4>zolar</h4>
+          <h4>movie base</h4>
         </Link>
       </Content>
     </Wrapper>
