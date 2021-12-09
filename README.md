@@ -1,2 +1,2 @@
-# zolar-movies
+# movie-base
  movies from the movies API
