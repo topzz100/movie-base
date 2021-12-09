@@ -1,2 +1,2 @@
 # movie-base
- movies from the movies API
+a react movies app from the movies API
