@@ -30,7 +30,7 @@ const Movie = () => {
         time={movie.runtime}
         budget={movie.budget}
         revenue={movie.revenue}/>
-      <Grid title = {'Actors'}>
+      <Grid title = {'Casts'}>
         {
           movie.actors.map((actor) => {
             return(
